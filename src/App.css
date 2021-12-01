@@ -1,0 +1,307 @@
+/* .App {
+  background-image: linear-gradient(to top, #f0b025 0%, #ffa61f 100%);
+  0656167046
+Yacine
+0797924765
+} */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.fascade {
+  width: 100%;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  background-image: url("./images/chiken3.jpg");
+  background-size: cover;
+}
+
+.fascade .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+  padding-top: 1rem;
+  min-height: 6rem;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding-top: 0.5rem;
+    display: block;
+    text-align: center;
+  }
+}
+
+.navbar h3 {
+  color: #fff;
+  font-size: 2rem;
+  margin: 0 auto;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+@media (max-width: 900px) {
+  .navbar h3 {
+    font-size: 1.7rem;
+  }
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 6rem);
+  display: flex;
+  align-items: center;
+  margin-left: 5rem;
+}
+
+.hero .title {
+  width: 45rem;
+  box-shadow: 0.2rem 0.3rem rgb(243 148 16);
+}
+
+@media (max-width: 900px) {
+  .hero .title {
+    width: 25rem;
+  }
+}
+@media (min-width: 900px) and (max-width: 1300px) {
+  .hero .title {
+    width: 40rem;
+  }
+}
+
+.hero .title h1 {
+  font-size: clamp(2.5rem, 14vw, 5rem);
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .hero .title h1 {
+    font-size: clamp(2rem, 14vw, 3rem);
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1300px) {
+  .hero .title h1 {
+    font-size: clamp(2.5rem, 14vw, 4rem);
+  }
+}
+
+.hero h3 {
+  font-size: clamp(2.5rem, 10vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .hero h3 {
+    font-size: clamp(1.8rem, 14vw, 1.2rem);
+  }
+}
+
+.hero .btn {
+  font-size: 1.8rem;
+  padding-left: 2rem;
+  padding-right: 3rem;
+  font-weight: 2rem;
+  border: 1px solid #ffa703;
+  color: #ffa703;
+  margin-top: 1rem;
+}
+
+.hero .btn:hover {
+  background-color: rgb(243 148 16);
+  color: #fff;
+}
+
+.search-form {
+  padding-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form .form-control {
+  width: 500px;
+  height: 50px;
+  padding-left: 20px;
+  font-size: 20px;
+  border-color: #ffa703;
+  box-shadow: none;
+}
+@media (max-width: 700px) {
+  .search-form .form-control {
+    width: 400px;
+  }
+}
+
+.search-form .dropdown {
+  margin-right: 10px;
+}
+
+.search-form .dropdown button {
+  color: #fff;
+  box-shadow: none;
+  font-size: 1.7rem;
+  line-height: 1.7rem;
+}
+
+.search-form .btn {
+  height: 45px;
+  width: 45px;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.spinner-width {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.search-form .fa-search {
+  color: #fff;
+}
+
+.search-form .dropdown .dropdown-menu {
+  border: 1px solid rgb(255, 166, 0);
+}
+.search-form .dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: rgb(255, 166, 0);
+  color: #fff;
+}
+
+.recipe-items {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 3rem;
+  padding: 0 10px;
+}
+
+.recipe-items .card {
+  max-height: 500px;
+  text-align: center;
+  border: none;
+}
+
+.recipe-items .card:hover {
+  background-color: #ffe1aa;
+  cursor: pointer;
+}
+
+.recipe-items .card img {
+  width: 280px;
+  height: 280px;
+  margin: 10px auto;
+  box-shadow: 8px 8px #ffa703;
+}
+
+.recipe-items .card .card-body .cons {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.recipe-items .card .card-body .cons span {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.recipe-items .card .card-body .fats span {
+  background-color: #fc1f31;
+}
+.recipe-items .card .card-body .calories span {
+  background-color: rgb(255, 166, 0);
+}
+.recipe-items .card .card-body .carbohyd span {
+  background-color: rgb(71, 59, 139);
+}
+.recipe-items .card .card-body .protein span {
+  background-color: rgb(8, 175, 2);
+}
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(41, 39, 39, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.backdrop .model {
+  width: 700px;
+  height: 650px;
+  background-color: #fff;
+}
+
+@media (max-width: 1000px) {
+  .backdrop .model {
+    width: 400px;
+    height: 600px;
+    overflow: scroll;
+  }
+}
+
+.backdrop .header {
+  margin-bottom: 10px;
+  background-color: rgb(248, 214, 170);
+  padding: 10px;
+}
+
+.backdrop .header img {
+  display: inline-block;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+  border: 3px solid white;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  height: 14rem;
+  width: 14rem;
+  margin-right: 30px;
+}
+
+.backdrop .header h1 {
+  display: inline-block;
+  color: #fff;
+  font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+  .backdrop .header h1 {
+    margin-top: 10px;
+  }
+}
+
+.backdrop .body {
+  margin: 10px 30px 20px;
+}
+
+.footer {
+  background: rgb(2, 1, 0);
+  color: #fff;
+  padding: 2rem;
+}
+
+.footer h5 {
+  font-weight: bold;
+}
