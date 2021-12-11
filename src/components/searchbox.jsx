@@ -16,7 +16,7 @@ const SearchBox = ({recipes, handleSubmit, onChange, search}) => {
          </button>
          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             {recipes.map(recipe => (                      
-               <Link to={recipe.recipe.label}><li className="dropdown-item" key={recipe.recipe.calories} style={{cursor: 'pointer'}}>{recipe.recipe.label} </li></Link>
+               <Link to={recipe.recipe.label} key={recipe.recipe.calories}><li className="dropdown-item" style={{cursor: 'pointer'}}>{recipe.recipe.label} </li></Link>
             ))}
          </ul>
       </div>

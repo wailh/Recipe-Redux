@@ -10,6 +10,10 @@ Yacine
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .fascade {
   width: 100%;
   height: 100vh;
@@ -57,11 +61,16 @@ Yacine
 
 .hero {
   position: relative;
-  width: 100%;
   height: calc(100vh - 6rem);
   display: flex;
   align-items: center;
   margin-left: 5rem;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    margin-left: 1rem;
+  }
 }
 
 .hero .title {
@@ -71,7 +80,7 @@ Yacine
 
 @media (max-width: 900px) {
   .hero .title {
-    width: 25rem;
+    width: 24rem;
   }
 }
 @media (min-width: 900px) and (max-width: 1300px) {
@@ -123,6 +132,15 @@ Yacine
   margin-top: 1rem;
 }
 
+@media (max-width: 900px) {
+  .hero .btn {
+    font-size: 1.3rem;
+    padding-left: 1.5rem;
+    padding-right: 2.5rem;
+    font-weight: 2rem;
+  }
+}
+
 .hero .btn:hover {
   background-color: rgb(243 148 16);
   color: #fff;
@@ -146,7 +164,7 @@ Yacine
 }
 @media (max-width: 700px) {
   .search-form .form-control {
-    width: 400px;
+    width: 350px;
   }
 }
 
@@ -159,6 +177,13 @@ Yacine
   box-shadow: none;
   font-size: 1.7rem;
   line-height: 1.7rem;
+}
+
+@media (max-width: 700px) {
+  .search-form .dropdown button {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
 }
 
 .search-form .btn {
@@ -251,14 +276,16 @@ Yacine
 
 .backdrop .model {
   width: 700px;
-  height: 650px;
+  height: 95%;
   background-color: #fff;
+  padding-bottom: 8px;
+  overflow-x: hidden;
 }
 
 @media (max-width: 1000px) {
   .backdrop .model {
     width: 400px;
-    height: 600px;
+    height: 95%;
     overflow: scroll;
   }
 }
@@ -269,15 +296,28 @@ Yacine
   padding: 10px;
 }
 
+@media (max-width: 1000px) {
+  .backdrop .header {
+    text-align: center;
+  }
+}
+
 .backdrop .header img {
   display: inline-block;
   box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
   border: 3px solid white;
   border-top-left-radius: 50%;
   border-bottom-right-radius: 50%;
-  height: 14rem;
-  width: 14rem;
+  height: 12rem;
+  width: 12rem;
   margin-right: 30px;
+}
+
+@media (max-width: 1000px) {
+  .backdrop .header img {
+    height: 9rem;
+    width: 9rem;
+  }
 }
 
 .backdrop .header h1 {

@@ -1,4 +1,5 @@
 import React from 'react'
+import { v4 as uuidv4 } from 'uuid';
 
 const Modal = ({selectedImg, title, ingredientLines, closeModel}) => {
     return (
@@ -10,7 +11,7 @@ const Modal = ({selectedImg, title, ingredientLines, closeModel}) => {
                 </div>
                 <ol className='text-start body' >
                     {ingredientLines.map(ingredient =>
-                        <li >{ingredient}</li>
+                        <li key={uuidv4()}>{ingredient}</li>
                     )}
                 </ol>
             </div>

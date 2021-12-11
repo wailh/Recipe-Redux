@@ -20,18 +20,22 @@ function App() {
   const [title, setTitle] = useState()
   const [loading, setLoading] = useState(true)
 
-  useEffect(async () => {
-     getRecipes()  
-  }, [query])
-
   const getRecipes = async () => {
-    const recipes = await fetch(
-     `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
-    )
-    const data = await recipes.json()
-    setRecipes(data.hits)
-    setLoading(false)
+    try{
+      let recipes = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`)
+      const data = await recipes.json()
+      setRecipes(data.hits)
+      setLoading(false) 
+    }
+    catch(ex) {
+      alert('the food you entered does not exist, please try with another one')
+      setQuery('chicken')
+    }
   }
+
+  useEffect(() => {
+    getRecipes()
+  }, [query])
   
   const handleChange = (currentValue) => {
       setSearch(currentValue)
@@ -74,15 +78,15 @@ function App() {
       {(loading) 
             ?
             <div className='spinner-width mb-5'>
-                <div class="spinner-grow text-success" role="status"></div>
-                <div class="spinner-grow text-danger" role="status"></div>
-                <div class="spinner-grow text-warning" role="status"></div>
-                <div class="spinner-grow text-info" role="status"></div>
+                <div className="spinner-grow text-success" role="status"></div>
+                <div className="spinner-grow text-danger" role="status"></div>
+                <div className="spinner-grow text-warning" role="status"></div>
+                <div className="spinner-grow text-info" role="status"></div>
             </div> 
             :
        <div className='row'>
         {recipes.map(recipe => (
-            <div className='col-md-6 col-lg-3' key={recipe.recipe.calories}>
+            <div className='col-md-6 col-lg-4 col-xl-3' key={recipe.recipe.calories}>
               <Recipes key={recipe.recipe.label}
                       title={recipe.recipe.label} 
                       image={recipe.recipe.image} 
@@ -96,7 +100,10 @@ function App() {
             </div>}
       </div>
       <Footer />
-      {(modelOpen) && <Modal closeModel={closeModel} ingredientLines={ingredientLines} title={title} selectedImg={selectedImg} /> }
+      {(modelOpen) && <Modal closeModel={closeModel} 
+                             ingredientLines={ingredientLines} 
+                             title={title} 
+                             selectedImg={selectedImg} /> }
     </div>
   );
 }
