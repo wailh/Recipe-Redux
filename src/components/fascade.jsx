@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from './Navbar';
-import Hero from './Hero'
+import Navbar from './navbar';
+import Hero from './hero'
 
 const Fascade = () => {
     return ( 

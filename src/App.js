@@ -2,11 +2,11 @@ import React, {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getRecipes, loadRecipes } from './store/recipes'
 import store from './store/store'
-import Recipes from './components/Recipes';
-import SearchBox from './components/Searchbox';
-import Modal from './components/Model';
-import Fascade from './components/Fascade';
-import Footer from './components/Footer';
+import Recipes from './components/recipes';
+import SearchBox from './components/searchbox';
+import Modal from './components/model';
+import Fascade from './components/fascade';
+import Footer from './components/footer';
 import './App.css';
 
 const App = () => {
